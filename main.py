@@ -53,20 +53,24 @@ CLASS_NAMES_DICT = model.model.names
 print(CLASS_NAMES_DICT)
 
 # class_ids of interest - car, motorcycle, bus and truck
-CLASS_ID = [2, 3, 5, 7]
+# CLASS_ID = [2, 3, 5, 7]
+# class_ids of interest - person
+CLASS_ID = [0]
 
 # Mimimum object detection accuracy to consider an object. Between 0 and 1.
 DETECT_ACC = 0.5
 
-# Select video stream
-cap = cv2.VideoCapture("car.mp4")
+# Select video stream or webcam.
+# cap = cv2.VideoCapture("car.mp4")
+cap = cv2.VideoCapture(0)
 
 # If you want to use a region of interest (roi), use with_roi = True
 with_roi = False
 
 while True:
     ret, frame = cap.read()
-    height, width, _ = frame.shape
+    if frame is not None:
+        height, width, _ = frame.shape
     
     if not ret:
         break
