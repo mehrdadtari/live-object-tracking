@@ -11,3 +11,28 @@ Also, you can manually set the minimum detection accuracy to consider for tracki
 In addition, you have the capability to do object tracking in the entire frame or select a region of interest (roi) to perform object tracking. 
 
 In each frame, for the detected objects, the bounding box, the class name, the detection accuracy, and the tracking ID are illustrated. 
+
+## Installation on the host machine
+Step 1. Install ultralytics.
+```shell
+pip install ultralytics
+```
+
+Step 2. Install ByteTrack.
+```shell
+git clone https://github.com/ifzhang/ByteTrack.git
+cd ByteTrack
+pip install -r requirements.txt
+python3 setup.py develop
+```
+
+Step 3. Install [pycocotools](https://github.com/cocodataset/cocoapi).
+```shell
+pip3 install cython 
+pip3 install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+```
+
+Step 4. Others
+```shell
+pip3 install cython_bbox
+```
